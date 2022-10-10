@@ -91,7 +91,17 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+  mounted() {
+    this.$store.dispatch('getBannerList')
+  },
+  computed: {
+    ...mapState({
+      bannerList:state => state.home.bannerList
+    })
+  },
+};
 </script>
 
 <style scoped lang='less'>

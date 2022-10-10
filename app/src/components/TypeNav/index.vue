@@ -101,9 +101,11 @@ export default {
         } else {
           query.category3Id = category3id;
         }
-
-        location.query = query;
-        this.$router.push(location);
+        if (this.$route.params) {
+          location.params = this.$route.params
+          location.query = query;
+          this.$router.push(location);
+        }
       }
     },
     changeIndex: throttle(function (index) {
@@ -126,7 +128,7 @@ export default {
   },
   computed: {
     ...mapState({
-      categoryList: (state) => state.home.CategoryList,
+      categoryList: (state) => state.home.categoryList,
     }),
   },
 };
@@ -253,15 +255,15 @@ export default {
         }
       }
     }
-  //过渡动画开始的状态
-    .sort-enter{
+    //过渡动画开始的状态
+    .sort-enter {
       height: 0px;
     }
-    .sort-enter-to{
+    .sort-enter-to {
       height: 461px;
     }
-    .sort-enter-active{
-      transition: all .3s linear;
+    .sort-enter-active {
+      transition: all 0.3s linear;
     }
   }
 }

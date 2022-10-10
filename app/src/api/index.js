@@ -1,4 +1,7 @@
 //所有的api接口统一的管理
 import requests from './request'
+import mockRequests from './mockAjax'
 
 export const reqCategoryList = () => requests({ url: '/product/getBaseCategoryList', method: 'get' })
+
+export const reqBannerList = () => mockRequests({ url: '/banner', method: 'get' })

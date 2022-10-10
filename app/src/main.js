@@ -14,6 +14,9 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false
 
+//引入MockServer.js --- mock数据
+import '@/mock/mockServer'
+
 
 new Vue({
   render: h => h(App),
