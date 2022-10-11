@@ -1,8 +1,9 @@
-import {reqCategoryList,reqBannerList} from '@/api';
+import {reqCategoryList,reqBannerList,reqFloorList} from '@/api';
 
 const state = {
     categoryList:[],
-    bannerList:[]
+    bannerList:[],
+    floorList:[]
 }
 //唯一能修改state的手段
 const mutations = {
@@ -11,6 +12,9 @@ const mutations = {
     },
     BANNERLIST(state,bannerList){
         state.bannerList = bannerList
+    },
+    FLOORLIST(state,floorList){
+        state.floorList = floorList
     }
 }
 //这里可以修改业务逻辑，可以异步处理，但不能修改state
@@ -23,9 +27,15 @@ const actions = {
     },
     async getBannerList({commit}){
         let result = await reqBannerList()
-        console.log(result);
         if(result.code == 200){
             commit("BANNERLIST",result.data)
+        }
+    },
+    async getFloorList({commit}){
+        let result = await reqFloorList()
+        console.log(result);
+        if(result.code == 200){
+            commit("FLOORLIST",result.data)
         }
     }
 }

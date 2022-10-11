@@ -16,6 +16,7 @@ Vue.config.productionTip = false
 
 //引入MockServer.js --- mock数据
 import '@/mock/mockServer'
+import 'swiper/css/swiper.css'
 
 
 new Vue({
