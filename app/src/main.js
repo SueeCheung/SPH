@@ -5,10 +5,12 @@ import 'element-ui/lib/theme-chalk/index.css';
 //引入路由
 import router from '@/router'
 import TypeNav from '@/components/TypeNav'
+import Carousel from '@/components/Carousel'
 
 import store from '@/store'
 
 Vue.component(TypeNav.name,TypeNav)
+Vue.component(Carousel.name,Carousel)
 
 Vue.use(ElementUI);
 
@@ -18,6 +20,9 @@ Vue.config.productionTip = false
 import '@/mock/mockServer'
 import 'swiper/css/swiper.css'
 
+
+import {reqList} from "@/api"
+console.log(reqList({}));
 
 new Vue({
   render: h => h(App),
