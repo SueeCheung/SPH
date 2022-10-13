@@ -21,9 +21,6 @@ import '@/mock/mockServer'
 import 'swiper/css/swiper.css'
 
 
-import {reqList} from "@/api"
-console.log(reqList({}));
-
 new Vue({
   render: h => h(App),
   //注册路由

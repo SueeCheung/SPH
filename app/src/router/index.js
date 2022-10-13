@@ -49,15 +49,11 @@ export default new VueRouter({
             meta: { show: false }
         },
         {
-            path: '/search/:keyWord?',
+            path: '/search/:keyword?',
             component: Search,
             meta: { show: true },
             name:'search',
             props:true
-        },
-        {
-            path: '/test',
-            component: Test
         },
         {
             //重定向

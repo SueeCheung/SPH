@@ -61,7 +61,7 @@ export default {
   methods: {
     goSearch() {
       if(this.$route.query){
-        let location = {name:'search',params:{keyWord:this.keyWord}}
+        let location = {name:'search',params:{keyword:this.keyWord}}
         location.query = this.$route.query
         this.$router.push(location)
       }
